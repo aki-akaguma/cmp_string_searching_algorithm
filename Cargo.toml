@@ -1,0 +1,38 @@
+[package]
+name = "cmp_string_searching_algorithm"
+version = "0.1.0"
+authors = ["aki <aki.akaguma@hotmail.com>"]
+edition = "2018"
+description = "research: compare string-searching algorithms in computer science"
+keywords = ["polymorphism"]
+categories = ["rust-patterns"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+
+[features]
+
+[dependencies]
+anyhow = "1.0"
+twoway = "0.2"
+aho-corasick = "0.7"
+memchr = "2.3"      # sse2
+memmem = "0.1"      # two way
+sliceslice = "0.2"  # avx2
+libc = "0.2"
+
+[dev-dependencies]
+criterion = "0.3"
+
+[workspace]
+members = [
+    "xtask",
+]
+
+[[bench]]
+name = "bench-ss-algo"
+path = "benches/bench-ss-algo.rs"
+harness = false
+
+#[[bin]]
+#name = "bin-match-string"
+#path = "src/bin-match-string.rs"
