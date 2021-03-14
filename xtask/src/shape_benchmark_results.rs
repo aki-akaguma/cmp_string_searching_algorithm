@@ -33,12 +33,12 @@ fn output4(
     bench_vec_4: Vec<BenchStr>,
 ) -> anyhow::Result<()> {
     println!(
-        "| {:^22} | {:^11} | {:^11} | {:^11} | {:^11} |",
+        "| {:^23} | {:^11} | {:^11} | {:^11} | {:^11} |",
         "`name`", "`bench:en`", "`bench:ja`", "`musl:en`", "`musl:ja`"
     );
     println!(
-        "|:{:<22}-|-{:>11}:|-{:>11}:|-{:>11}:|-{:>11}:|",
-        "-".repeat(22),
+        "|:{:<23}-|-{:>11}:|-{:>11}:|-{:>11}:|-{:>11}:|",
+        "-".repeat(23),
         "-".repeat(11),
         "-".repeat(11),
         "-".repeat(11),
@@ -59,7 +59,7 @@ fn output4(
         let bench4 = &bench_vec_4[idx4];
         if bench1.is_cycle {
             println!(
-                "| {:<22} | {:>8.3} kc | {:>8.3} kc | {:>8.3} kc | {:>8.3} kc |",
+                "| {:<23} | {:>8.3} kc | {:>8.3} kc | {:>8.3} kc | {:>8.3} kc |",
                 bench1.name,
                 bench1.time / 1000.0,
                 bench2.time / 1000.0,
@@ -68,7 +68,7 @@ fn output4(
             );
         } else {
             println!(
-                "| {:<22} | {:>8.3} uc | {:>8.3} uc | {:>8.3} uc | {:>8.3} uc |",
+                "| {:<23} | {:>8.3} uc | {:>8.3} uc | {:>8.3} uc | {:>8.3} uc |",
                 bench1.name,
                 bench1.time / 0.000001,
                 bench2.time / 0.000001,

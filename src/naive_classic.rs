@@ -1,3 +1,24 @@
+/*
+pub fn _my_naive_classic(haystack: &str, needle: &str) -> Option<usize> {
+    let hay_len = haystack.len();
+    let nee_len = needle.len();
+    //
+    if nee_len == 0 || hay_len < nee_len {
+        return None;
+    }
+    let mut it = haystack.char_indices();
+    while let Some((i,_c)) = it.next() {
+        if i + nee_len > hay_len {
+            break;
+        }
+        if &haystack[i..(i + nee_len)] == needle {
+            return Some(i);
+        }
+    }
+    None
+}
+*/
+
 pub fn my_naive_classic(haystack: &str, needle: &str) -> Option<usize> {
     let hay_bytes = haystack.as_bytes();
     let nee_bytes = needle.as_bytes();
@@ -29,6 +50,13 @@ mod test {
     fn test_void_1() {
         let haystack = "1";
         let needle = "";
+        let r = my_naive_classic(haystack, needle);
+        assert_eq!(r, None);
+    }
+    #[test]
+    fn test_none() {
+        let haystack = "111 a 111b";
+        let needle = "xxx";
         let r = my_naive_classic(haystack, needle);
         assert_eq!(r, None);
     }

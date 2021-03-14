@@ -44,6 +44,13 @@ mod test {
         assert_eq!(r, None);
     }
     #[test]
+    fn test_none() {
+        let haystack = "111 a 111b";
+        let needle = "xxx";
+        let r = my_naive_opt_1st(haystack, needle);
+        assert_eq!(r, None);
+    }
+    #[test]
     fn test_fit() {
         let haystack = "111 a 111b";
         let needle = "111 a 111b";

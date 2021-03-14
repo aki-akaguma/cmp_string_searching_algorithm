@@ -38,8 +38,12 @@ fn process_search_my_naive_opt_last(texts: &[&str], pattern: &str) -> anyhow::Re
     cmp_string_searching_algorithm::do_search_my_naive_opt_last(texts, pattern)
 }
 
-fn process_search_memchr(texts: &[&str], pattern: &str) -> anyhow::Result<usize> {
-    cmp_string_searching_algorithm::do_search_memchr(texts, pattern)
+fn process_search_my_naive_opt_mc_1st(texts: &[&str], pattern: &str) -> anyhow::Result<usize> {
+    cmp_string_searching_algorithm::do_search_my_naive_opt_mc_1st(texts, pattern)
+}
+
+fn process_search_my_naive_opt_mc_last(texts: &[&str], pattern: &str) -> anyhow::Result<usize> {
+    cmp_string_searching_algorithm::do_search_my_naive_opt_mc_last(texts, pattern)
 }
 
 mod create_data;
@@ -147,7 +151,19 @@ fn criterion_benchmark(c: &mut Criterion) {
             unreachable!();
         }
     }
-    match process_search_memchr(
+    match process_search_my_naive_opt_mc_1st(
+        criterion::black_box(&vv),
+        criterion::black_box(pat_string_s),
+    ) {
+        Ok(n) => {
+            assert_eq!(n, match_cnt);
+        }
+        Err(err) => {
+            eprintln!("{}", err);
+            unreachable!();
+        }
+    }
+    match process_search_my_naive_opt_mc_last(
         criterion::black_box(&vv),
         criterion::black_box(pat_string_s),
     ) {
@@ -224,9 +240,17 @@ fn criterion_benchmark(c: &mut Criterion) {
             );
         })
     });
-    c.bench_function("cmp-memchr", |b| {
+    c.bench_function("cmp-my-naive-optmc-1st", |b| {
         b.iter(|| {
-            let _r = process_search_memchr(
+            let _r = process_search_my_naive_opt_mc_1st(
+                criterion::black_box(&vv),
+                criterion::black_box(pat_string_s),
+            );
+        })
+    });
+    c.bench_function("cmp-my-naive-optmc-last", |b| {
+        b.iter(|| {
+            let _r = process_search_my_naive_opt_mc_last(
                 criterion::black_box(&vv),
                 criterion::black_box(pat_string_s),
             );
