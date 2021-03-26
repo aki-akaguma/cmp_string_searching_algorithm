@@ -1,3 +1,5 @@
+TASKSET = taskset -c 2
+
 BENCH_STR = --bench=bench-ss-algo
 
 TARGET_MUSL = --target=x86_64-unknown-linux-musl
@@ -33,19 +35,19 @@ report:
 bench.en.1:
 	@rm -f z.bench.en.1.log
 	cargo bench --no-run
-	env AKI_TEST_DAT=en.1 cargo bench $(BENCH_STR) -- -n | tee -a z.bench.en.1.log
+	$(TASKSET) env AKI_TEST_DAT=en.1 cargo bench $(BENCH_STR) -- -n | tee -a z.bench.en.1.log
 
 bench.ja.1:
 	@rm -f z.bench.ja.1.log
 	cargo bench --no-run
-	env AKI_TEST_DAT=ja.1 cargo bench $(BENCH_STR) -- -n | tee -a z.bench.ja.1.log
+	$(TASKSET) env AKI_TEST_DAT=ja.1 cargo bench $(BENCH_STR) -- -n | tee -a z.bench.ja.1.log
 
 bench.en.1-musl:
 	@rm -f z.musl.bench.en.1.log
 	cargo bench --no-run $(TARGET_MUSL)
-	env AKI_TEST_DAT=en.1 cargo bench $(BENCH_STR) $(TARGET_MUSL) -- -n | tee -a z.musl.bench.en.1.log
+	$(TASKSET) env AKI_TEST_DAT=en.1 cargo bench $(BENCH_STR) $(TARGET_MUSL) -- -n | tee -a z.musl.bench.en.1.log
 
 bench.ja.1-musl:
 	@rm -f z.musl.bench.ja.1.log
 	cargo bench --no-run $(TARGET_MUSL)
-	env AKI_TEST_DAT=ja.1 cargo bench $(BENCH_STR) $(TARGET_MUSL) -- -n | tee -a z.musl.bench.ja.1.log
+	$(TASKSET) env AKI_TEST_DAT=ja.1 cargo bench $(BENCH_STR) $(TARGET_MUSL) -- -n | tee -a z.musl.bench.ja.1.log
