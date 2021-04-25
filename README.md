@@ -5,18 +5,18 @@ research: comparing string match of rust
 
 |         `name`          | `bench:en`  | `bench:ja`  |  `musl:en`  |  `musl:ja`  |
 |:------------------------|------------:|------------:|------------:|------------:|
-| cmp-my-naive-optmc-1st  |    5.277 uc |   90.743 uc |    5.942 uc |   66.975 uc |
-| cmp-my-naive-optmc-last |  `5.348` uc |  `5.380` uc |  `5.892` uc |  `5.851` uc |
-| cmp-ahocorasick-find    |   14.357 uc |   15.865 uc |   14.220 uc |   15.231 uc |
-| cmp-libc-memmem         |   15.432 uc |   19.282 uc |   19.022 uc |   21.410 uc |
-| cmp-twowaysearcher      |   23.287 uc |   16.725 uc |   23.685 uc |   16.868 uc |
-| cmp-my-naive-opt-last   |   35.616 uc |   35.592 uc |   36.565 uc |   36.554 uc |
-| cmp-my-naive-opt-1st    |   36.691 uc |  100.590 uc |   36.840 uc |   84.621 uc |
-| cmp-twoway-find-str     |   40.137 uc |   34.331 uc |   42.096 uc |   31.965 uc |
-| cmp-std-str-find        |   45.038 uc |   35.259 uc |   44.258 uc |   34.838 uc |
-| cmp-my-naive-classic    |  353.630 uc |  377.250 uc |  216.950 uc |  238.040 uc |
+| cmp-my-naive-optmc-1st  |    5.255 uc |   88.790 uc |    5.927 uc |   68.377 uc |
+| cmp-my-naive-optmc-last |    5.362 uc |    5.354 uc |    5.939 uc |    5.951 uc |
+| cmp-ahocorasick-find    |   14.206 uc |   15.029 uc |   14.323 uc |   16.047 uc |
+| cmp-libc-memmem         |   15.408 uc |   19.411 uc |   17.812 uc |   21.992 uc |
+| cmp-twowaysearcher      |   23.374 uc |   17.342 uc |   23.684 uc |   17.393 uc |
+| cmp-my-naive-opt-last   |   35.604 uc |   35.602 uc |   36.445 uc |   36.379 uc |
+| cmp-my-naive-opt-1st    |   36.106 uc |   92.085 uc |   36.918 uc |   90.525 uc |
+| cmp-twoway-find-str     |   38.508 uc |   34.295 uc |   39.250 uc |   34.121 uc |
+| cmp-std-str-find        |   43.911 uc |   35.294 uc |   43.881 uc |   35.217 uc |
+| cmp-my-naive-classic    |  336.910 uc |  360.650 uc |  185.960 uc |  213.130 uc |
 
-- rustc 1.50.0 (cb75ad5db 2021-02-10)
+- rustc 1.51.0 (2fd73fabe 2021-03-23)
 
 ## This benchmark measures string search.
 
