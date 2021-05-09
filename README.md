@@ -3,20 +3,20 @@ research: comparing string match of rust
 
 ## The Naive string-searching algorithm is faster on the modern computer.
 
+- rustc 1.52.0 (88f19c6da 2021-05-03)
+
 |         `name`          | `bench:en`  | `bench:ja`  |  `musl:en`  |  `musl:ja`  |
 |:------------------------|------------:|------------:|------------:|------------:|
-| cmp-my-naive-optmc-1st  |    5.255 uc |   88.790 uc |    5.927 uc |   68.377 uc |
-| cmp-my-naive-optmc-last |    5.362 uc |    5.354 uc |    5.939 uc |    5.951 uc |
-| cmp-ahocorasick-find    |   14.206 uc |   15.029 uc |   14.323 uc |   16.047 uc |
-| cmp-libc-memmem         |   15.408 uc |   19.411 uc |   17.812 uc |   21.992 uc |
-| cmp-twowaysearcher      |   23.374 uc |   17.342 uc |   23.684 uc |   17.393 uc |
-| cmp-my-naive-opt-last   |   35.604 uc |   35.602 uc |   36.445 uc |   36.379 uc |
-| cmp-my-naive-opt-1st    |   36.106 uc |   92.085 uc |   36.918 uc |   90.525 uc |
-| cmp-twoway-find-str     |   38.508 uc |   34.295 uc |   39.250 uc |   34.121 uc |
-| cmp-std-str-find        |   43.911 uc |   35.294 uc |   43.881 uc |   35.217 uc |
-| cmp-my-naive-classic    |  336.910 uc |  360.650 uc |  185.960 uc |  213.130 uc |
-
-- rustc 1.51.0 (2fd73fabe 2021-03-23)
+| cmp-my-naive-optmc-1st  |    5.299 uc |   88.435 uc |    6.940 uc |   73.004 uc |
+| cmp-my-naive-optmc-last |    5.559 uc |    5.564 uc |    6.089 uc |    6.053 uc |
+| cmp-ahocorasick-find    |   14.264 uc |   15.168 uc |   15.353 uc |   15.275 uc |
+| cmp-libc-memmem         |   15.449 uc |   19.288 uc |   17.923 uc |   21.641 uc |
+| cmp-twowaysearcher      |   22.881 uc |   17.634 uc |   22.915 uc |   17.894 uc |
+| cmp-my-naive-opt-last   |   35.623 uc |   35.538 uc |   36.662 uc |   38.172 uc |
+| cmp-my-naive-opt-1st    |   36.143 uc |   90.012 uc |   37.367 uc |   81.878 uc |
+| cmp-twoway-find-str     |   40.841 uc |   33.649 uc |   39.138 uc |   33.029 uc |
+| cmp-std-str-find        |   41.122 uc |   34.682 uc |   41.599 uc |   33.400 uc |
+| cmp-my-naive-classic    |  336.520 uc |  358.240 uc |  202.980 uc |  227.540 uc |
 
 ## This benchmark measures string search.
 
