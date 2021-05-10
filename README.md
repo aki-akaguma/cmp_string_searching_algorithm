@@ -7,16 +7,16 @@ research: comparing string match of rust
 
 |         `name`          | `bench:en`  | `bench:ja`  |  `musl:en`  |  `musl:ja`  |
 |:------------------------|------------:|------------:|------------:|------------:|
-| cmp-my-naive-optmc-1st  |    5.299 uc |   88.435 uc |    6.940 uc |   73.004 uc |
-| cmp-my-naive-optmc-last |    5.559 uc |    5.564 uc |    6.089 uc |    6.053 uc |
-| cmp-ahocorasick-find    |   14.264 uc |   15.168 uc |   15.353 uc |   15.275 uc |
-| cmp-libc-memmem         |   15.449 uc |   19.288 uc |   17.923 uc |   21.641 uc |
-| cmp-twowaysearcher      |   22.881 uc |   17.634 uc |   22.915 uc |   17.894 uc |
-| cmp-my-naive-opt-last   |   35.623 uc |   35.538 uc |   36.662 uc |   38.172 uc |
-| cmp-my-naive-opt-1st    |   36.143 uc |   90.012 uc |   37.367 uc |   81.878 uc |
-| cmp-twoway-find-str     |   40.841 uc |   33.649 uc |   39.138 uc |   33.029 uc |
-| cmp-std-str-find        |   41.122 uc |   34.682 uc |   41.599 uc |   33.400 uc |
-| cmp-my-naive-classic    |  336.520 uc |  358.240 uc |  202.980 uc |  227.540 uc |
+| cmp-my-naive-optmc-1st  |    5.302 uc |   89.060 uc |    6.857 uc |   68.086 uc |
+| cmp-my-naive-optmc-last |    5.566 uc |    5.586 uc |    6.060 uc |    6.164 uc |
+| cmp-ahocorasick-find    |   14.251 uc |   15.160 uc |   15.473 uc |   15.309 uc |
+| cmp-libc-memmem         |   15.398 uc |   19.288 uc |   18.756 uc |   21.259 uc |
+| cmp-twowaysearcher      |   23.866 uc |   17.296 uc |   23.504 uc |   17.453 uc |
+| cmp-my-naive-opt-last   |   35.687 uc |   35.703 uc |   36.127 uc |   35.979 uc |
+| cmp-my-naive-opt-1st    |   36.271 uc |   90.692 uc |   36.759 uc |   81.594 uc |
+| cmp-twoway-find-str     |   39.970 uc |   33.341 uc |   39.470 uc |   32.746 uc |
+| cmp-std-str-find        |   43.438 uc |   33.927 uc |   41.697 uc |   33.914 uc |
+| cmp-my-naive-classic    |  337.330 uc |  361.250 uc |  201.580 uc |  225.010 uc |
 
 ## This benchmark measures string search.
 
