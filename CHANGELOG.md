@@ -2,6 +2,12 @@ TBD
 ===
 Unreleased changes. Release notes have not yet been written.
 
+0.1.5 (2021-06-30)
+=====
+
+* update depends: anyhow(1.0.41), libc(0.2.97), twoway(0.2.2)
+* add memx-cdy(0.1) to `dev-dependencies`
+
 0.1.4 (2021-05-10)
 =====
 

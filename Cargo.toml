@@ -1,6 +1,6 @@
 [package]
 name = "cmp_string_searching_algorithm"
-version = "0.1.4"
+version = "0.1.5"
 authors = ["aki <aki.akaguma@hotmail.com>"]
 edition = "2018"
 description = "research: compare string-searching algorithms in computer science"
@@ -21,6 +21,7 @@ memmem = "0.1"      # two way
 libc = "0.2"
 
 [dev-dependencies]
+memx-cdy = "0.1"
 criterion = "0.3"
 
 [workspace]

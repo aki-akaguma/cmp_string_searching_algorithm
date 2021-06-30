@@ -49,6 +49,8 @@ fn process_search_my_naive_opt_mc_last(texts: &[&str], pattern: &str) -> anyhow:
 mod create_data;
 
 fn criterion_benchmark(c: &mut Criterion) {
+    memx_cdy::memx_init();
+    //
     let (v, match_cnt, pat_string_s, _pat_regex_s, _pat_glob_s) = create_data::create_data();
     let vv: Vec<&str> = v.iter().map(|item| item.as_str()).collect();
     //let pattern = "Error";
