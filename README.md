@@ -3,6 +3,22 @@ research: comparing string match of rust
 
 ## The Naive string-searching algorithm is faster on the modern computer.
 
+- rustc 1.56.1 (59eed8a2a 2021-11-01)
+
+|         `name`          | `bench:en`  | `bench:ja`  |  `musl:en`  |  `musl:ja`  |
+|:------------------------|------------:|------------:|------------:|------------:|
+| cmp-my-naive-optmc-1st  |    5.572 uc |   88.334 uc |    5.499 uc |   87.254 uc |
+| cmp-my-naive-optmc-last |    5.585 uc |    5.572 uc |    5.460 uc |    5.444 uc |
+| cmp-libc-memmem         |    6.723 uc |    6.619 uc |    6.522 uc |    6.531 uc |
+| cmp-ahocorasick-find    |   14.159 uc |   15.124 uc |   14.118 uc |   15.081 uc |
+| cmp-twowaysearcher      |   24.017 uc |   17.509 uc |   23.482 uc |   17.817 uc |
+| cmp-my-naive-opt-last   |   35.716 uc |   35.771 uc |   35.715 uc |   35.746 uc |
+| cmp-my-naive-opt-1st    |   36.229 uc |   93.927 uc |   36.217 uc |   83.240 uc |
+| cmp-std-str-find        |   38.367 uc |   32.371 uc |   38.208 uc |   32.634 uc |
+| cmp-twoway-find-str     |   44.234 uc |   33.062 uc |   43.240 uc |   33.130 uc |
+| cmp-my-naive-classic    |  524.750 uc |  524.720 uc |  334.920 uc |  334.210 uc |
+
+
 - rustc 1.53.0 (53cb7b09b 2021-06-17)
 
 |         `name`          | `bench:en`  | `bench:ja`  |  `musl:en`  |  `musl:ja`  |

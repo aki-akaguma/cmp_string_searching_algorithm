@@ -1,6 +1,6 @@
 [package]
 name = "cmp_string_searching_algorithm"
-version = "0.1.5"
+version = "0.1.6"
 authors = ["aki <aki.akaguma@hotmail.com>"]
 edition = "2018"
 description = "research: compare string-searching algorithms in computer science"
