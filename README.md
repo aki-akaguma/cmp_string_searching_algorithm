@@ -1,4 +1,8 @@
 # cmp_string_match
+
+![Rust Version][rustc-image]
+![Apache2/MIT licensed][license-image]
+
 research: comparing string match of rust
 
 ## The Naive string-searching algorithm is faster on the modern computer.
@@ -88,3 +92,8 @@ Use this on 1st character matching.
 
 The 2nd Optimization is that takes advantage of UTF8 features,
 cause of the rust language use only UTF-8 character strings.
+
+[//]: # (badges)
+
+[rustc-image]: https://img.shields.io/badge/rustc-1.56+-blue.svg
+[license-image]: https://img.shields.io/badge/license-Apache2.0/MIT-blue.svg
